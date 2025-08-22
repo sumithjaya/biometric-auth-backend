@@ -16,7 +16,7 @@ def save_user(user_id: str, name: str, ct_b64: str, nonce_b64: str):
             "user_id": user_id, "name": name,
             "embedding_ciphertext": ct_b64, "nonce_b64": nonce_b64,
             "updated_at": datetime.utcnow().isoformat() + "Z"
-        }, f, indent=2)
+        }, f, indent=2)  
 
 def load_user(user_id: str):
     p = _path(user_id)
