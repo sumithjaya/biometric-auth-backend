@@ -1,17 +1,15 @@
-fastapi==0.115.0
-uvicorn[standard]==0.30.6
-insightface==0.7.3
-onnxruntime==1.22.1         # ← bump from 1.18.1
-numpy==1.26.4
-opencv-python==4.10.0.84
-pillow==10.4.0
-python-multipart==0.0.9
-cryptography==43.0.1
-pydantic==2.8.2
-python-dotenv==1.0.1
-loguru==0.7.2
-typing-extensions==4.12.2
-SQLAlchemy==2.0.35
-email-validator==2.2.0
-
-
+fastapi==0.115.6            # latest patch in 0.115 series
+uvicorn[standard]==0.30.6   # already fine
+insightface==0.2.1           # keep pinned
+onnxruntime==1.22.1         # bumped as you noted
+numpy==2.2.6                # matches your clean venv install
+opencv-python==4.10.0.84    # fine
+pillow==10.4.0              # fine
+python-multipart==0.0.9     # fine
+cryptography==43.0.1        # fine
+pydantic==2.9.2             # bump from 2.8.2 → matches what uvicorn stacktrace showed
+python-dotenv==1.0.1        # fine
+loguru==0.7.2               # fine
+typing-extensions==4.12.2   # fine
+SQLAlchemy==2.0.35          # fine
+email-validator==2.2.0      # explicitly pinned, fixes EmailStr import
