@@ -11,5 +11,6 @@ pydantic==2.9.2             # bump from 2.8.2 → matches what uvicorn stacktrac
 python-dotenv==1.0.1        # fine
 loguru==0.7.2               # fine
 typing-extensions==4.12.2   # fine
-SQLAlchemy==2.0.35          # fine
-email-validator==2.2.0      # explicitly pinned, fixes EmailStr import
+SQLAlchemy==2.0.35           
+email-validator==2.2.0       
+psycopg[binary]==3.2.9
