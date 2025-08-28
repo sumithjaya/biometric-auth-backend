@@ -31,3 +31,12 @@ class VerifyOut(BaseModel):
     matched: bool
     distance: float
     threshold: float
+
+    
+class PinRequest(BaseModel):
+    pin: str
+
+class PinResponse(BaseModel):
+    ok: bool
+    employee_id: str
+    name: str

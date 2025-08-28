@@ -1,13 +1,20 @@
-# app/crud.py
 from sqlalchemy.orm import Session
 from sqlalchemy import select
+from . import models   # ✅ import whole models module
 from .models import Enrollment
+
+
+def get_employee_by_pin(db: Session, pin: str):
+    return db.query(models.Employee).filter(models.Employee.pin == pin).first()
+
 
 def get_by_user_id(db: Session, user_id: str):
     return db.execute(select(Enrollment).where(Enrollment.user_id == user_id)).scalar_one_or_none()
 
+
 def get_by_email(db: Session, email: str):
     return db.execute(select(Enrollment).where(Enrollment.email == email)).scalar_one_or_none()
+
 
 def upsert_enrollment(
     db: Session,

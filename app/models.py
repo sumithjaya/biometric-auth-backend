@@ -3,6 +3,16 @@ from sqlalchemy import Column, Integer, String, DateTime, UniqueConstraint
 from sqlalchemy.sql import func
 from .db import Base
 
+
+class Employee(Base):
+    __tablename__ = "employees"
+
+    id = Column(Integer, primary_key=True, index=True)
+    employee_id = Column(String(20), unique=True, nullable=False)
+    name = Column(String(100), nullable=False)
+    pin = Column(String(10), nullable=False)  # hash this in prod!
+
+
 class Enrollment(Base):
     __tablename__ = "enrollments"
 
